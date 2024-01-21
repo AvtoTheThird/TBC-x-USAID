@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "TBCContractica-Black";
+  src: url("fonts/contractica-fonts/TBCContractica-Black.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TBCContractica-Bold";
+  src: url("fonts/contractica-fonts/TBCContractica-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TBCContractica-Book";
+  src: url("fonts/contractica-fonts/TBCContractica-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-Light";
+  src: url("fonts/contractica-fonts/TBCContractica-Light.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-Medium";
+  src: url("fonts/contractica-fonts/TBCContractica-Medium.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-Regular";
+  src: url("fonts/contractica-fonts/TBCContractica-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-CAPS-Black";
+  src: url("fonts/contractica-fonts/TBCContracticaCAPS-Black.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-CAPS-Bold";
+  src: url("fonts/contractica-fonts/TBCContracticaCAPS-Bold.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-CAPS-Book";
+  src: url("fonts/contractica-fonts/TBCContracticaCAPS-Book.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-CAPS-Light";
+  src: url("fonts/contractica-fonts/TBCContracticaCAPS-Light.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-CAPS-Medium";
+  src: url("fonts/contractica-fonts/TBCContracticaCAPS-Medium.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TBCContractica-CAPS-Regular";
+  src: url("fonts/contractica-fonts/TBCContracticaCAPS-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
