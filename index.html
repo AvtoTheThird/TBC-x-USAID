@@ -7,17 +7,39 @@
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="fonts.css" />
     <script src="./script.js"></script>
+    <script src="./carousel.js"></script>
+    <script src="./overlay.js"></script>
   </head>
   <body>
     <header>
       <div class="header-container">
         <div>
-          <img width="60px" src="./icons/unnamed.png" alt="" />
+          <img width="182px" src="./icons/tbcxacademy.png" alt="" />
         </div>
         <div class="header-links">
           <a href="">მთავარი</a>
           <a href="">TBC IT</a>
-          <a href="">TBC x USAID</a>
+          <a href="" style="color: #00a3e0">TBC x USAID</a>
+          <a href="">რისკები</a>
+        </div>
+        <div class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</div>
+        <div
+          class="nav-overlay"
+          id="nav-overlay"
+          onclick="closeMobileMenu()"
+        ></div>
+
+        <div class="nav-dialog-container" id="mobileMenu">
+          <img
+            onclick="closeMobileMenu()"
+            style="float: right"
+            width="40px"
+            src="./icons/close.png"
+            alt=""
+          />
+          <a href="">მთავარი</a>
+          <a href="">TBC IT</a>
+          <a href="" style="color: #00a3e0">TBC x USAID</a>
           <a href="">რისკები</a>
         </div>
       </div>
@@ -42,13 +64,11 @@
           და მის პარტნიორ კომპანიებში.
           <br />
           <br />
-          <a href="">გაიგე მეტი</a>
+          <a class="blue-hover-text" href="">გაიგე მეტი</a>
         </p>
       </div>
       <div class="saswavlo-kursebi">
-        <p style="font-size: 24px; padding-top: 2.8rem; padding-bottom: 3.2rem">
-          სასწავლო კურსები
-        </p>
+        <span> სასწავლო კურსები </span>
         <div class="cards">
           <div class="card">
             <img
@@ -57,13 +77,23 @@
               src="https://static.wixstatic.com/media/dd97f4_6f93a2a737b14a32ae26b17f51e6dbf1~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_6f93a2a737b14a32ae26b17f51e6dbf1~mv2.jpg"
               alt=""
             />
-            <p style="font-size: 18px; padding-top: 1.5rem; padding-left: 15px">
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
               iOS Development
             </p>
-            <p style="font-size: 14px; padding-top: 2rem; padding-left: 15px">
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
               რეგისტრაცია დასრულებულია
             </p>
-            <p style="padding-top: 7rem; padding-left: 15px">კურსის დეტალები</p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
           </div>
           <div class="card">
             <img
@@ -72,13 +102,23 @@
               src="https://static.wixstatic.com/media/dd97f4_4323db1079614633a653e2ff9a95738e~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_4323db1079614633a653e2ff9a95738e~mv2.jpg"
               alt=""
             />
-            <p style="font-size: 18px; padding-top: 1.5rem; padding-left: 15px">
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
               React
             </p>
-            <p style="font-size: 14px; padding-top: 2rem; padding-left: 15px">
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
               რეგისტრაცია დასრულებულია
             </p>
-            <p style="padding-top: 7rem; padding-left: 15px">კურსის დეტალები</p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
           </div>
           <div class="card">
             <img
@@ -87,23 +127,387 @@
               src="https://static.wixstatic.com/media/dd97f4_5487da3fc590472dbb3599f7575df2d1~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_5487da3fc590472dbb3599f7575df2d1~mv2.jpg"
               alt=""
             />
-            <p style="font-size: 18px; padding-top: 1.5rem; padding-left: 15px">
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
               Python
             </p>
-            <p style="font-size: 14px; padding-top: 2rem; padding-left: 15px">
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
               რეგისტრაცია დასრულებულია
             </p>
-            <p style="padding-top: 7rem; padding-left: 15px">კურსის დეტალები</p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              width="300px"
+              height="150px"
+              src="https://static.wixstatic.com/media/dd97f4_d9e4b267142542e98dbcdf183d766651~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_d9e4b267142542e98dbcdf183d766651~mv2.jpg"
+              alt=""
+            />
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
+              Advanced Python
+            </p>
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
+              რეგისტრაცია დასრულებულია
+            </p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              width="300px"
+              height="150px"
+              src="https://static.wixstatic.com/media/dd97f4_41969c5f1e6b4a269bf1d790a52e465b~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_41969c5f1e6b4a269bf1d790a52e465b~mv2.jpg"
+              alt=""
+            />
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
+              Advanced Cybersecurity Course
+            </p>
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
+              რეგისტრაცია დასრულებულია
+            </p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              width="300px"
+              height="150px"
+              src="https://static.wixstatic.com/media/dd97f4_dd355dc915d14264afd4ce2a9d2b0e12~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_dd355dc915d14264afd4ce2a9d2b0e12~mv2.jpg"
+              alt=""
+            />
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
+              ToT - Training of Trainers
+            </p>
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
+              რეგისტრაცია დასრულებულია
+            </p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              width="300px"
+              height="150px"
+              src="https://static.wixstatic.com/media/dd97f4_0fc678e4e2e04f8dacc747a4e2fbb6e6~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_0fc678e4e2e04f8dacc747a4e2fbb6e6~mv2.jpg"
+              alt=""
+            />
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
+              Blockchain
+            </p>
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
+              რეგისტრაცია დასრულებულია
+            </p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              width="300px"
+              height="150px"
+              src="https://static.wixstatic.com/media/dd97f4_dda966974c014319bd5623526510b47c~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_dda966974c014319bd5623526510b47c~mv2.jpg"
+              alt=""
+            />
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
+              DevOps
+            </p>
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
+              რეგისტრაცია დასრულებულია
+            </p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              width="300px"
+              height="150px"
+              src="https://static.wixstatic.com/media/dd97f4_8cc30cf0258d45a6ad2298ebec33550a~mv2.jpg/v1/fill/w_300,h_150,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/dd97f4_8cc30cf0258d45a6ad2298ebec33550a~mv2.jpg"
+              alt=""
+            />
+            <p
+              style="font-size: 18px; padding-top: 1.5rem; padding-left: 1.5rem"
+            >
+              Information Security Governance
+            </p>
+            <p style="font-size: 14px; padding-top: 2rem; padding-left: 1.5rem">
+              რეგისტრაცია დასრულებულია
+            </p>
+            <div class="kuris-detalebi">
+              <img
+                width="16px"
+                height="13px"
+                src="./icons/blue-arrow.png"
+                alt=""
+              />
+              <p>კურსის დეტალები</p>
+            </div>
           </div>
         </div>
       </div>
-      <div id="imageContainer" class="carousel-section">
-        <h1>პროექტის პარტნიეორები</h1>
-        <div class="carousel">
-          <img class="partner" src="./partners/1.webp" alt="" />
-          <img class="partner" src="./partners/2.webp" alt="" />
-          <img class="partner" src="./partners/3.webp" alt="" />
+      <div class="carousel-section">
+        <h1 class="proeqtis-partniorebi">პროექტის პარტნიეორები</h1>
+        <div class="image-container-buttons">
+          <button id="+" class="carousel-button" onclick="incrementState()">
+            <img
+              width="18px"
+              height="35px"
+              src="./icons/left.png"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <div id="image-container" class="carousel">
+            <img style="display: block" src="./partners/1.webp" alt="Image 1" />
+            <img style="display: block" src="./partners/2.webp" alt="Image 2" />
+            <img style="display: block" src="./partners/3.webp" alt="Image 3" />
+            <img src="./partners/4.webp" alt="Image 4" />
+            <img src="./partners/5.webp" alt="Image 5" />
+            <img src="./partners/6.webp" alt="Image 6" />
+            <img src="./partners/7.webp" alt="Image 7" />
+          </div>
+          <button id="-" class="carousel-button" onclick="decrementState()">
+            <img width="18px" height="35px" src="./icons/right.png" alt="" />
+          </button>
         </div>
+        <div class="bullets">
+          <button class="carousel-button" onclick="setStateTo1()">
+            &#x2022;
+          </button>
+          <button class="carousel-button" onclick="setStateTo2()">
+            &#x2022;
+          </button>
+          <button class="carousel-button" onclick="setStateTo3()">
+            &#x2022;
+          </button>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="FAQ">
+          <span style="font-size: 24px; font-family: TBCContractica-Regular"
+            >ხშირად დასმული კითხვები</span
+          >
+          <span class="blue-hover-text">ყველა კითხვა</span>
+        </div>
+        <div class="accordion-item" onclick="toggleAccordion(1)">
+          <div class="accordion-header">
+            როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა?
+            <img
+              class="arrow"
+              id="arrow1"
+              width="10px"
+              src="./icons/down.png"
+              alt=""
+            />
+          </div>
+          <div
+            class="accordion-content"
+            id="accordion1"
+            style="max-height: 0px"
+          >
+            <p class="accordion-text">
+              კურსზე რეგისტრაციისთვის უნდა გაიარო რამდენიმე ეტაპი:
+            </p>
+            <p class="accordion-text" style="padding-left: 15px">
+              <span style="font-weight: bold">I ეტაპი</span> - პირველ ეტაპზე
+              საჭიროა, შეავსო სასურველი კურსისთვის განკუთვნილი სარეგისტრაციო
+              ფორმა, რომელიც განთავსებულია კურსის შიდა გვერდზე. კურსზე
+              რეგისტრაციის დასრულების შემდეგ დაიწყება შემოსული განცხადებების
+              გადარჩევა. <br />
+              <span style="font-weight: bold">II ეტაპი</span> - შერჩევის მეორე
+              ეტაპი კურსების მიხედვით განსხვავებულია, ზოგიერთი კურსისთვის
+              მოიცავს პრე-ტესტს, ზოგიერთ კურსზე კი უნარების ტესტს, სადაც
+              მინიმალური ზღვარის გადალახვის შემთხვევაში გადახვალ შერჩევის შემდეგ
+              ეტაპზე.
+              <br />
+              <span style="font-weight: bold">III ეტაპი</span> - მესამე ეტაპი
+              კურსების მიხედვით განსხვავდება: Advance კურსებზე, სადაც მოითხოვება
+              გარკვეული ტექნიკური ცოდნა, მონაწილეებმა უნდა დაწერონ ტექნიკური
+              ტესტი ცოდნის დონის შესამოწმებლად, ხოლო კურსებზე, სადაც რაიმე ტიპის
+              წინასწარი ცოდნა მოთხოვნილი არ არის უნდა შეასრულოთ ტექნიკური
+              დავალება, რაც თქვენი კვლევისა და თვითსწავლის უნარს ამოწმებს.
+              <br />
+              <span style="font-weight: bold">IV ეტაპ</span>ი - შერჩევის ბოლო
+              მეოთხე ეტაპი მოიცავს გასაუბრებას შესარჩევ კომისიასთან. გასაუბრების
+              წარმატებით გავლის შემთხვევაში ჩაირიცხებით კურსზე და გაფორმდება
+              შესაბამისი ხელშეკრულება.
+            </p>
+            <p class="accordion-text">
+              * სანამ კურსზე დარეგისტრირდები მნიშვნელოვანია, ყურადღებით წაიკითხო
+              კურსის აღწერა, ნახო რას ისწავლი კურსის განმავლობაში და გაიგო
+              გააჩნია თუ არა კურსს დასწრების წინაპირობა.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item" onclick="toggleAccordion(2)">
+          <div class="accordion-header">
+            შემიძლია თუ არა ერთზე მეტ კურსზე რეგისტრაცია?
+            <img
+              class="arrow"
+              id="arrow2"
+              width="10px"
+              src="./icons/down.png"
+              alt=""
+            />
+          </div>
+          <div
+            class="accordion-content"
+            id="accordion2"
+            style="max-height: 0px"
+          >
+            <p class="accordion-text">
+              TBC X USAID ტექნოლოგიური განათლებისთვის პროგრამაში თითოეულ
+              კანდიდატს აქვს მხოლოდ ერთი კურსის გავლის შესაძლებლობა. გარდა
+              Information Security და Python კურსებისა, სადაც Basic დონის გავლის
+              შემდეგ შესაძლებელია სწავლის გაგრძელება Advance დონეზე.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item" onclick="toggleAccordion(3)">
+          <div class="accordion-header">
+            რა ღირს სწავლა პროგრამის ფარგლებში?
+            <img
+              class="arrow"
+              id="arrow3"
+              width="10px"
+              src="./icons/down.png"
+              alt=""
+            />
+          </div>
+          <div
+            class="accordion-content"
+            id="accordion3"
+            style="max-height: 0px"
+          >
+            <p class="accordion-text">
+              პროგრამის ფარგლებში კურსებზე სწავლა სრულიად დაფინანსებულია თიბისი
+              ბანკისა და USAID-ის მიერ.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="contents">
+          <div style="display: flex; flex-direction: column">
+            <img
+              style="padding: 9px 0px"
+              width="106px"
+              src="./icons/tbc2.webp"
+              alt=""
+            />
+            <span style="padding: 10px 0px">© 2023 ყველა უფლება დაცულია</span>
+            <a
+              class="wesebi-da-pirobebi"
+              onclick="openDialog()"
+              style="padding: 10px 0px"
+            >
+              წესები და პირობები
+            </a>
+          </div>
+          <div>
+            <img src="./icons/yt.webp" alt="" />
+            <img src="./icons/fb.webp" alt="" />
+            <div><button class="mogvwere-button">მოგვწერეთ</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" onclick="closeDialog()"></div>
+
+      <div id="dialog" class="dialog-container">
+        <img
+          style="float: right"
+          width="24px"
+          onclick="closeDialog()"
+          src="./icons/close.png"
+          alt=""
+        />
+        <br /><br />
+        <h1 style="color: #8c8c8c; font-size: 22px">წესები და პირობები</h1>
+        <br />
+        <p style="font-size: 14px">
+          წინამდებარე ვებ-გვერდის გამოყენება რეგულირდება სს „თიბისი ბანკის“
+          (საიდენტიფიკაციო ნომერი: 204854595, მისამართი: თბილისი, კ.
+          მარჯანიშვილის ქ. #7) მიერ დადგენილი წესებითა და პირობებით.
+          <br />
+          <br />ტერმინები „ბანკი“, „ჩვენ“ გულისხმობს სს „თიბისი ბანკს“ (ასევე
+          მისი ჯგუფის წევრ მონათესავე, შვილობილ, აფილირებულ კომპანიებს), ხოლო
+          ტერმინი „თქვენ“, „მომხმარებელი“ გულისხმობს ინდივიდს, კომპანიას,
+          ორგანიზაციულ წარმონაქმნს, რომელიც იყენებს ბანკის წინამდებარე
+          ვებ-გვერდს. <br /><br />გთხოვთ, ყურადღებით გაეცნოთ წინამდებარე წესებსა
+          და პირობებს, რომელიც არეგულირებს თქვენ მიერ ვებ-გვერდის გამოყენების
+          პირობებს. იმ შემთხვევაში, თუ არ ეთანხმებით წინამდებარე წესებსა და
+          პირობებს, გთხოვთ, დატოვოთ ბანკის ვებ-გვერდი. <br /><br />ვებ-გვერდზე
+          სტუმრობით, ან მასზე გამოქვეყნებული ინფორმაციის გამოყენებით, ადასტურებთ
+          და სრულად ეთანხმებით მითითებულ ყველა დანაწესს, რომელიც შესაძლოა
+          ცალმხრივად შეიცვალოს სს „თიბისი ბანკის“ მიერ გარკვეული პერიოდულობით,
+          რაც დაფიქსირდება მოცემულ ვებ-გვერდზე და მასზე თქვენი სტუმრობა ნიშნავს
+          შესაბამის პირობებზე დათანხმებას. <br /><br />ბანკის ვებ-გვერდზე
+          მითითებული ინფორმაცია, უმეტეს შემთხვევაში, განკუთვნილია იმ
+          პირებისთვის, რომლებიც დაინტერესებულნი არიან საქართველოს ფინანსურ
+          ბაზარზე მომსახურების მიღებით. შესაძლოა, ვებ-გვერდზე მითითებული
+          ინფორმაცია არ იყოს ხელმისაწვდომი მსოფლიოს ყველა გეოგრაფიულ არეალში,
+          ბანკის გადაწყვეტილების შესაბამისად. <br />
+          <br />ბანკის ვებ-გვერდზე მითითებული გარკვეული ინფორმაციის
+          გასაანალიზებლად, შესაძლოა დაგჭირდეთ შესაბამისი სფეროს სპეციალისტის
+          კონსულტაცია. <br /><br />ბანკის ვებ-გვერდზე მითითებული კონკრეტული
+          პროდუქტები/მომსახურება რეგულირდება სპეციალური საბანკო მომსახურების
+          ხელშეკრულებით.
+        </p>
+        <br /><br /><br /><br /><br />
+
+        <button class="close-button" onclick="closeDialog()">დახურვა</button>
       </div>
     </body>
   </body>

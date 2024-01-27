@@ -3,115 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
     <style>
       body {
-        background-color: grey;
         margin: 0;
-        font-family: Arial, sans-serif;
+        font-family: "Arial", sans-serif;
       }
 
-      .carousel-container {
-        position: relative;
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        overflow: hidden;
-      }
-
-      .carousel {
+      .navbar {
         display: flex;
-        width: 300%;
-        transition: transform 0.5s ease-in-out;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background-color: #333;
+        color: white;
       }
 
-      .slide {
-        flex: 1;
-        background-size: cover;
-        height: 200px;
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
       }
 
-      .nav-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 24px;
-        background: none;
-        border: none;
-        color: #fff;
+      .links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .links a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .mobile-menu-btn {
+        display: none;
         cursor: pointer;
-        outline: none;
       }
 
-      .prev {
-        left: 10px;
-      }
+      /* Media Query for Mobile Devices */
+      @media (max-width: 768px) {
+        .links {
+          display: none;
+        }
 
-      .next {
-        right: 10px;
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav-dialog-container {
+          display: none;
+          position: fixed;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 70%;
+          background-color: #333;
+          color: white;
+          padding: 20px;
+          box-sizing: border-box;
+        }
       }
     </style>
-    <script>
-      let currentSlide = 1;
-
-      function showSlide(n) {
-        const carousel = document.querySelector(".carousel");
-        currentSlide = ((n + 3) % 3) + 1; // Ensure the index is between 1 and 3
-        carousel.style.transform = `translateX(-${(currentSlide - 1) * 100}%)`;
-      }
-
-      function nextSlide() {
-        showSlide(currentSlide + 1);
-      }
-
-      function prevSlide() {
-        showSlide(currentSlide - 1);
-      }
-
-      setInterval(nextSlide, 3000);
-    </script>
   </head>
   <body>
-    <div class="carousel-container">
-      <div class="carousel">
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('./icons/unnamed.png')"
-        ></div>
+    <div class="navbar">
+      <div class="logo">Your Logo</div>
+      <div class="links">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
       </div>
-      <button class="nav-arrow prev" onclick="prevSlide()">&lt;</button>
-      <button class="nav-arrow next" onclick="nextSlide()">&gt;</button>
+      <div class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</div>
     </div>
+
+    <div class="nav-dialog-container" id="mobileMenu">
+      <a href="#" onclick="closeMobileMenu()">Link 1</a>
+      <a href="#" onclick="closeMobileMenu()">Link 2</a>
+      <a href="#" onclick="closeMobileMenu()">Link 3</a>
+    </div>
+
+    <script>
+      function toggleMobileMenu() {
+        var mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.style.display =
+          mobileMenu.style.display === "block" ? "none" : "block";
+      }
+
+      function closeMobileMenu() {
+        document.getElementById("mobileMenu").style.display = "none";
+      }
+    </script>
   </body>
 </html>
