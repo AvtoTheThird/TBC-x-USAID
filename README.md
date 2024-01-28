@@ -17,7 +17,7 @@ no JS frameworks or libraries were used.
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/AvtoTheThird/TBC-x-USAID/tree/main
 
 2. ```bash
    cd your-repository
