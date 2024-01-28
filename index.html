@@ -6,7 +6,7 @@
     <title>TBC x USAID</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="fonts.css" />
-    <script src="./script.js"></script>
+    <script src="./acordion.js"></script>
     <script src="./carousel.js"></script>
     <script src="./overlay.js"></script>
   </head>
@@ -22,7 +22,18 @@
           <a href="" style="color: #00a3e0">TBC x USAID</a>
           <a href="">რისკები</a>
         </div>
-        <div class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</div>
+        <div
+          id="mobile-menu-btn"
+          class="mobile-menu-btn"
+          onclick="toggleMobileMenu()"
+        >
+          <img
+            width="65px"
+            height="65px"
+            src="./icons/x-animation.svg"
+            alt=""
+          />
+        </div>
         <div
           class="nav-overlay"
           id="nav-overlay"
@@ -32,8 +43,8 @@
         <div class="nav-dialog-container" id="mobileMenu">
           <img
             onclick="closeMobileMenu()"
-            style="float: right"
-            width="40px"
+            style="padding-right: 20px; padding-bottom: 25px"
+            width="28px"
             src="./icons/close.png"
             alt=""
           />
@@ -339,7 +350,9 @@
           <span style="font-size: 24px; font-family: TBCContractica-Regular"
             >ხშირად დასმული კითხვები</span
           >
-          <span class="blue-hover-text">ყველა კითხვა</span>
+          <span id="from" class="blue-hover-text" style="order: 1"
+            >ყველა კითხვა</span
+          >
         </div>
         <div class="accordion-item" onclick="toggleAccordion(1)">
           <div class="accordion-header">
@@ -437,6 +450,11 @@
             </p>
           </div>
         </div>
+        <div>
+          <span id="to" style="padding-top: 50px" class="blue-hover-text"
+            >ყველა კითხვა</span
+          >
+        </div>
       </div>
       <div class="footer">
         <div class="contents">
@@ -456,9 +474,12 @@
               წესები და პირობები
             </a>
           </div>
-          <div>
-            <img src="./icons/yt.webp" alt="" />
-            <img src="./icons/fb.webp" alt="" />
+          <div class="social">
+            <div>
+              <img width="39" src="./icons/fb.webp" alt="" />
+              <img width="39" src="./icons/yt.webp" alt="" />
+            </div>
+
             <div><button class="mogvwere-button">მოგვწერეთ</button></div>
           </div>
         </div>

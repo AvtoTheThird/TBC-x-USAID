@@ -1,6 +1,10 @@
 * {
   margin: 0;
 }
+
+body {
+  overflow-x: hidden;
+}
 .blue-hover-text {
   cursor: pointer;
   text-decoration: none;
@@ -53,13 +57,21 @@ body.scrolling header {
 }
 /* foto container */
 .foto-container {
+  /* width: 100vw; */
   position: relative;
   font-family: "TBCContractica-CAPS-Black";
   font-size: 20px;
   line-height: 4rem;
   height: 352px;
 }
+.foto-container img {
+  width: 100vw;
+  height: 352px;
 
+  /* height: 217px; */
+  object-fit: cover;
+  object-position: 50% 50%;
+}
 .foto-container h1 {
   position: absolute;
   top: 45%;
@@ -85,7 +97,7 @@ body.scrolling header {
 }
 .FAQ {
   display: flex;
-  width: 900px;
+  width: 46.875vw;
   justify-content: space-between;
 }
 .saswavlo-kursebi {
@@ -101,18 +113,21 @@ body.scrolling header {
   padding-top: 2.8rem;
   padding-bottom: 3.2rem;
   text-align: left;
-  width: 900px;
+  width: 46.875vw;
 }
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
   gap: 40px;
   padding: 20px;
-  width: 60rem;
+  width: 52.5vw;
+  align-items: center;
 }
 .card {
   position: relative;
-  width: 18.75rem;
+  width: 18rem;
   height: 25rem;
   border-radius: 8px;
   border: 1px solid rgb(107, 105, 105);
@@ -138,6 +153,7 @@ body.scrolling header {
 }
 /* carousel */
 .carousel-section {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,7 +162,7 @@ body.scrolling header {
   min-height: 360px;
 }
 .proeqtis-partniorebi {
-  width: 900px;
+  width: 46.875vw;
   text-align: left;
   padding-bottom: 50px;
   font-family: TBCContractica-Regular;
@@ -161,8 +177,9 @@ body.scrolling header {
   cursor: pointer;
   outline: inherit;
 }
+
 .carousel {
-  width: 60rem;
+  width: 50vw;
   display: flex;
   gap: 6rem;
   justify-content: space-evenly;
@@ -171,7 +188,7 @@ body.scrolling header {
 
 .image-container-buttons {
   display: flex;
-  width: 100%;
+  width: 100vw;
   justify-content: space-evenly;
   gap: 10rem;
 }
@@ -204,7 +221,7 @@ body.scrolling header {
 }
 
 .accordion-item {
-  width: 56.25rem;
+  width: 46.875vw;
   margin-bottom: 5px;
   box-shadow: 0 2px 2px -2px gray;
 }
@@ -253,10 +270,17 @@ body.scrolling header {
   justify-content: space-between;
   align-items: center;
 }
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  gap: 2rem;
+}
 .mogvwere-button {
   border: none;
-  font-size: 18px;
-  /* font-family: "TBCContractica-Book"; */
+  font-size: 15px;
+  font-family: "TBCContractica-Regular";
   cursor: pointer;
   border-radius: 8px;
   width: 162px;
@@ -270,7 +294,7 @@ body.scrolling header {
   background-color: grey;
   color: rgb(41, 40, 40);
 }
-/* caruselke */
+/* carusele */
 #image-container {
   position: relative;
 }
@@ -278,9 +302,9 @@ body.scrolling header {
 #image-container img {
   display: none;
   width: 250px;
-  height: 71px;
-  /* opacity: 0; */
-  transition: opacity 0.4s ease-in-out;
+
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
 }
 /* dialouge */
 .overlay {
@@ -304,7 +328,7 @@ body.scrolling header {
   top: 0;
   right: 0;
   height: 100%;
-  width: 668px; /* Set width to one-third of the screen */
+  width: 60%; /* Set width to one-third of the screen */
   background-color: #2b2b2b;
   overflow-y: auto;
   box-sizing: border-box;
@@ -342,7 +366,7 @@ body.scrolling header {
 }
 
 /* PHONE */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .header-container {
     width: 100vw;
   }
@@ -375,6 +399,7 @@ body.scrolling header {
     justify-items: center;
     /* align-items: center; */
   }
+
   .accordion-item {
     width: 80vw;
     margin-bottom: 5px;
@@ -391,11 +416,15 @@ body.scrolling header {
   .carousel-button {
     display: none;
   }
+  .bullets button {
+    display: block;
+  }
   .proeqtis-partniorebi {
-    font-size: 18px;
-    width: 100vw;
+    font-size: 21px;
+    width: 85%;
     text-align: left;
-    padding: 20px;
+    padding: 18px 0;
+    margin-left: 50px;
   }
   .dialog-container {
     width: 60vw;
@@ -410,23 +439,35 @@ body.scrolling header {
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: block !important;
+    color: green;
   }
+
   .nav-dialog-container {
     flex-direction: column;
   }
+  #from {
+    display: none;
+  }
+  #to {
+    display: block !important;
+  }
 }
-
+#to {
+  display: none;
+}
 .mobile-menu-btn {
+  display: none;
   font-size: 50px;
   font-weight: bolder;
   color: red;
-  display: block;
   cursor: pointer;
 }
 .nav-dialog-container {
   display: none;
   position: fixed;
+  align-items: flex-end;
+
   text-align: right;
   top: 0;
   right: 0;
@@ -434,12 +475,12 @@ body.scrolling header {
   width: 70%;
   background-color: rgb(34, 34, 34);
   color: white;
-  padding: 20px;
+  padding: 20px 0;
   box-sizing: border-box;
 }
 .nav-dialog-container a {
   font-size: 19px;
-  margin: 25px 20px;
+  margin: 20px 15px;
 }
 .nav-overlay {
   display: none;

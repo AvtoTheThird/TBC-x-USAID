@@ -3,94 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Navbar</title>
+    <title>Animated SVG Click</title>
     <style>
-      body {
-        margin: 0;
-        font-family: "Arial", sans-serif;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        background-color: #333;
-        color: white;
-      }
-
-      .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-
-      .links {
-        display: flex;
-        gap: 20px;
-      }
-
-      .links a {
-        color: white;
-        text-decoration: none;
-      }
-
-      .mobile-menu-btn {
-        display: none;
+      /* Add any additional styles if needed */
+      #animated-svg {
+        width: 100px; /* Set your preferred width */
         cursor: pointer;
-      }
-
-      /* Media Query for Mobile Devices */
-      @media (max-width: 768px) {
-        .links {
-          display: none;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-        }
-
-        .nav-dialog-container {
-          display: none;
-          position: fixed;
-          top: 0;
-          right: 0;
-          height: 100%;
-          width: 70%;
-          background-color: #333;
-          color: white;
-          padding: 20px;
-          box-sizing: border-box;
-        }
       }
     </style>
   </head>
   <body>
-    <div class="navbar">
-      <div class="logo">Your Logo</div>
-      <div class="links">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-      <div class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</div>
-    </div>
-
-    <div class="nav-dialog-container" id="mobileMenu">
-      <a href="#" onclick="closeMobileMenu()">Link 1</a>
-      <a href="#" onclick="closeMobileMenu()">Link 2</a>
-      <a href="#" onclick="closeMobileMenu()">Link 3</a>
-    </div>
+    <object
+      id="animated-svg"
+      type="image/svg+xml"
+      data="animated.svg"
+      width="100"
+      height="100"
+    >
+      Your browser does not support SVG
+    </object>
 
     <script>
-      function toggleMobileMenu() {
-        var mobileMenu = document.getElementById("mobileMenu");
-        mobileMenu.style.display =
-          mobileMenu.style.display === "block" ? "none" : "block";
-      }
+      // Add a click event listener to the SVG object
+      const animatedSvgObject = document.getElementById("animated-svg");
 
-      function closeMobileMenu() {
-        document.getElementById("mobileMenu").style.display = "none";
-      }
+      animatedSvgObject.addEventListener("load", () => {
+        const svgDocument = animatedSvgObject.contentDocument;
+
+        // Add a click event listener to the SVG content
+        svgDocument
+          .getElementById("your-svg-element-id")
+          .addEventListener("click", () => {
+            // Toggle a class to restart the animation
+            animatedSvgObject.classList.toggle("animate");
+          });
+      });
     </script>
   </body>
 </html>

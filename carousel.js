@@ -4,7 +4,11 @@ function updateImages() {
   // console.log(images);
   images.forEach((img, index) => {
     const isVisible = index >= (state - 1) * 3 && index < state * 3;
-    img.style.display = isVisible ? "block" : "none";
+    img.classList.add("FadeIn");
+    setTimeout(() => {
+      img.style.display = isVisible ? "block" : "none";
+    }, 500);
+    img.style.opacity = isVisible ? 1 : 0;
   });
 }
 
